@@ -13,8 +13,7 @@ class Statusbar {
         vscode.workspace.onDidChangeConfiguration(this.update.bind(this));
         //vscode.workspace.onDidSaveTextDocument(this.update.bind(this));
         vscode.workspace.onDidChangeTextDocument(this.update.bind(this));
-        vscode.workspace.onDidOpenTextDocument(this.update.bind(this));
-        vscode.workspace.onDidCloseTextDocument(this.update.bind(this));
+        vscode.window.onDidChangeActiveTextEditor(this.update.bind(this));
     }
 
     initIcon() {
