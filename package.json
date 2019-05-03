@@ -2,7 +2,7 @@
 	"name": "gzip-status",
 	"displayName": "GZip Status",
 	"description": "Shows the current file gzip size in Visual Studio Code status bar.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "logerfo",
 	"engines": {
 		"vscode": "^1.33.0"
