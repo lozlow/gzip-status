@@ -10,11 +10,8 @@
     "typescript.tsc.autoDetect": "off",
     "spellright.language": [
         "en",
-        "pt"
     ],
     "spellright.documentTypes": [
         "markdown",
-        "latex",
-        "plaintext"
     ]
 }
