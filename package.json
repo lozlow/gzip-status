@@ -28,6 +28,10 @@
 	"activationEvents": [
 		"*"
 	],
+	"galleryBanner": {
+        "color": "#181818",
+        "theme": "dark"
+    },
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": [
