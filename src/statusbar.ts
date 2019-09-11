@@ -25,7 +25,7 @@ class Statusbar {
 
     update() {
         this.config = Config.get();
-        let options = {
+        const options = {
             level: this.config.level,
         };
         if (vscode.window.activeTextEditor) {
