@@ -11,7 +11,9 @@ Shows the current file gzip size in Visual Studio Code status bar.
 
 # Contributing
 
-Feel free to open any issues or pull requests. I will try to make time for them, if any.
+If you have suggestions for how close-label could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+
+For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 # [Release Notes](CHANGELOG.md)
 
