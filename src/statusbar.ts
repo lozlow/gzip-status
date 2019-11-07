@@ -5,7 +5,7 @@ import * as filesize from 'filesize.js';
 
 class Statusbar {
     icon: vscode.StatusBarItem;
-    config;
+    config: { level: number; };
 
     init() {
         this.initIcon();

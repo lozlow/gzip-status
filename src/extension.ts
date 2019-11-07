@@ -6,7 +6,7 @@ import statusbar from './statusbar';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	return statusbar.init();
+    return statusbar.init();
 }
 
 // this method is called when your extension is deactivated
