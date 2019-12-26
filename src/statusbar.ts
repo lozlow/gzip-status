@@ -1,11 +1,23 @@
 import * as vscode from 'vscode';
 import Config from './config';
 import * as gzip from 'gzip-js';
-import * as filesize from 'filesize.js';
+import filesize from 'filesize.js';
+import { debounce } from 'lodash';
+
+function calculateFileSize (text: string, options) {
+    const zipSize = filesize(gzip.zip(text, options).length)
+    const fileSize = filesize(new Buffer(text).length)
+
+    return {
+        zipSize,
+        fileSize
+    }
+}
 
 class Statusbar {
     icon: vscode.StatusBarItem;
     config: { level: number; };
+    calculateFileSize;
 
     init() {
         this.initIcon();
@@ -14,6 +26,7 @@ class Statusbar {
         //vscode.workspace.onDidSaveTextDocument(this.update.bind(this));
         vscode.workspace.onDidChangeTextDocument(this.update.bind(this));
         vscode.window.onDidChangeActiveTextEditor(this.update.bind(this));
+        this.calculateFileSize = debounce(calculateFileSize, 1000, { maxWait: 4000, leading: true})
     }
 
     initIcon() {
@@ -29,7 +42,8 @@ class Statusbar {
             level: this.config.level,
         };
         if (vscode.window.activeTextEditor) {
-            this.icon.text = `$(file-zip) ${filesize(gzip.zip(vscode.window.activeTextEditor.document.getText(), options).length)}`;
+            const { zipSize, fileSize } = this.calculateFileSize(vscode.window.activeTextEditor.document.getText(), options)
+            this.icon.text = `File size: ${fileSize} (gzipped: ${zipSize})`
             this.icon.show();
         }
         else {

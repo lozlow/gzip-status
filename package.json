@@ -29,9 +29,9 @@
 		"*"
 	],
 	"galleryBanner": {
-        "color": "#181818",
-        "theme": "dark"
-    },
+		"color": "#181818",
+		"theme": "dark"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": [
@@ -62,7 +62,8 @@
 	},
 	"dependencies": {
 		"filesize.js": "2.0.0",
-		"gzip-js": "0.3.2"
+		"gzip-js": "0.3.2",
+		"lodash": "^4.17.15"
 	},
 	"devDependencies": {
 		"@types/gzip-js": "0.3.1",
