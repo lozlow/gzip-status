@@ -2,7 +2,7 @@
 	"name": "gzip-status",
 	"displayName": "GZip Status",
 	"description": "Shows the current file gzip size in Visual Studio Code status bar.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "logerfo",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -57,13 +57,15 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "webpack --mode production",
+		"package:local": "vsce package",
 		"compile": "webpack --mode none",
 		"watch": "webpack --mode none --watch"
 	},
 	"dependencies": {
 		"filesize.js": "2.0.0",
 		"gzip-js": "0.3.2",
-		"lodash": "^4.17.15"
+		"lodash": "^4.17.15",
+		"vsce": "^1.71.0"
 	},
 	"devDependencies": {
 		"@types/gzip-js": "0.3.1",

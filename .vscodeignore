@@ -8,3 +8,4 @@ tsconfig.json
 vsc-extension-quickstart.md
 tslint.json
 webpack.config.js
+node_modules
